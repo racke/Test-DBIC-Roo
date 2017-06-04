@@ -1,4 +1,4 @@
-package Interchange6::Test::Role::Database;
+package Test::DBIC::Roo::Role::Database;
 
 use Test::Roo::Role;
 
@@ -6,7 +6,7 @@ requires qw(_build_database _build_dbd_version);
 
 =head1 NAME
 
-Interchange6::Test::Role::Database
+Test::DBIC::Roo::Role::Database
 
 =head1 DESCRIPTION
 

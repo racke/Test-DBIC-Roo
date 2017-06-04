@@ -1,18 +1,18 @@
-package Interchange6::Test::Role::MySQL;
+package Test::DBIC::Roo::Role::MySQL;
 
 =head1 NAME
 
-Interchange6::Test::Role::MySQL
+Test::DBIC::Roo::Role::MySQL
 
 =cut
 
 use File::Temp qw/tempdir/;
 use Test::Roo::Role;
-with 'Interchange6::Test::Role::Database';
+with 'Test::DBIC::Roo::Role::Database';
 
 =head1 METHODS
 
-See also L<Interchange6::Test::Role::Database> which is consumed by this role.
+See also L<Test::DBIC::Roo::Role::Database> which is consumed by this role.
 
 =head2 BUILD
 

@@ -1,17 +1,17 @@
-package Interchange6::Test::Role::PostgreSQL;
+package Test::DBIC::Roo::Role::PostgreSQL;
 
 =head1 NAME
 
-Interchange6::Test::Role::PostgreSQL
+Test::DBIC::Roo::Role::PostgreSQL
 
 =cut
 
 use Test::Roo::Role;
-with 'Interchange6::Test::Role::Database';
+with 'Test::DBIC::Roo::Role::Database';
 
 =head1 METHODS
 
-See also L<Interchange6::Test::Role::Database> which is consumed by this role.
+See also L<Test::DBIC::Roo::Role::Database> which is consumed by this role.
 
 =head2 BUILD
 

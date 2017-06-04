@@ -1,18 +1,18 @@
-package Interchange6::Test::Role::SQLite;
+package Test::DBIC::Roo::Role::SQLite;
 
 =head1 NAME
 
-Interchange6::Test::Role::SQLite
+Test::DBIC::Roo::Role::SQLite
 
 =cut
 
 use File::Temp;
 use Test::Roo::Role;
-with 'Interchange6::Test::Role::Database';
+with 'Test::DBIC::Roo::Role::Database';
 
 =head1 METHODS
 
-See also L<Interchange6::Test::Role::Database> which is consumed by this role.
+See also L<Test::DBIC::Roo::Role::Database> which is consumed by this role.
 
 =head2 BUILD
 
