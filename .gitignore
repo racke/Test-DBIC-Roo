@@ -1,0 +1,15 @@
+Makefile
+Makefile.old
+MYMETA.*
+*.bak
+*.tar.gz
+blib
+pm_to_blib
+
+# Devel cover directory
+cover_db/
+
+# Patch stuff
+*.orig
+*.rej
+

@@ -1,0 +1,11 @@
+^\.git\/
+^blib/
+^cover_db\/
+^MYMETA.*
+^pm_to_blib$
+^.*\.tar.gz$
+^.*.bak
+^.*.old
+^.*.swp
+.gitignore
+.travis.yml
