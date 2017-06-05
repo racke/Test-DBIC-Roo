@@ -181,14 +181,6 @@ test 'schema_sanity' => sub {
                   "nullable FK has join type LEFT for $relname in $source_name"
                 );
             }
-
-
-            # pod
-
-            next
-              if ( $source_name eq 'Navigation'
-                && $relname =~ /^(_parent|children|parents)$/ );
-
         }
     }
 };
