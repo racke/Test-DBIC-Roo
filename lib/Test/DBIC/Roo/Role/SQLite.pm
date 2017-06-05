@@ -79,7 +79,7 @@ sub connect_info {
 sub _build_database_info {
     my $self = shift;
     return "SQLite library version: "
-      . $self->ic6s_schema->storage->dbh->{sqlite_version};
+      . $self->schema->storage->dbh->{sqlite_version};
 }
 
 1;

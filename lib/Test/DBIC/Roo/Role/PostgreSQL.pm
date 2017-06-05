@@ -68,7 +68,7 @@ sub connect_info {
 
 sub _build_database_info {
     my $self = shift;
-    $self->ic6s_schema->storage->dbh_do(
+    $self->schema->storage->dbh_do(
         sub {
             my ( $storage, $dbh ) = @_;
             @{ $dbh->selectrow_arrayref(q| SELECT version() |) }[0];

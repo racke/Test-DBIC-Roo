@@ -2,7 +2,7 @@ package Test::DBIC::Roo::Role::Database;
 
 use Test::Roo::Role;
 
-requires qw(_build_database _build_dbd_version);
+requires qw(_build_database _build_dbd_version _build_schema_class);
 
 =head1 NAME
 
@@ -51,27 +51,26 @@ has dbd_version => (
 
 =head2 schema_class
 
-Defaults to Interchange6::Schema. This gives tests the normal expected schema but allows them to overload with some other test schema if desired.
+Schema class used for the tests.
 
 =cut
 
 has schema_class => (
-    is => 'ro',
-    default => 'Interchange6::Schema',
+    is => 'lazy',
 );
 
-=head2 ic6s_schema
+=head2 schema
 
 Our connected and deployed schema,
 
 =cut;
 
-has ic6s_schema => (
+has schema => (
     is => 'lazy',
     clearer => 1,
 );
 
-sub _build_ic6s_schema {
+sub _build_schema {
     my $self = shift;
 
     require DBIx::Class::Optional::Dependencies;
