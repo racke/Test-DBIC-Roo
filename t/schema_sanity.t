@@ -6,7 +6,7 @@ use lib File::Spec->catdir( 't', 'lib' );
 
 use Test::Deep;
 use Test::Roo;
-with 'Interchange6::Test::Role::SQLite';
+with 'Test::DBIC::Roo::Role::SQLite';
 
 unless ( $ENV{RELEASE_TESTING} ) {
     plan( skip_all => "Author tests not required for installation" );
@@ -15,14 +15,16 @@ unless ( $ENV{RELEASE_TESTING} ) {
 eval "use Module::Path";
 plan skip_all => "Module::Path required" if $@;
 
+sub _build_schema_class {
+    return 'Test::DBIx::Class::Example::Schema';
+}
+
 test 'schema_sanity' => sub {
     my $self = shift;
 
-    my $schema = $self->ic6s_schema;
+    my $schema = $self->schema;
 
     foreach my $source_name ( sort $schema->sources ) {
-
-        next if $source_name =~ /^(ProductWithSellingPrice)$/;
 
         my $source = $schema->source($source_name);
 
