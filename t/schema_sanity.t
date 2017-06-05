@@ -59,14 +59,14 @@ test 'schema_sanity' => sub {
 
             if ( $columns_info->{$column}->{is_auto_increment} ) {
                 ok(
-                    defined $data_type && $data_type eq 'integer',
+                    defined $data_type && ($data_type eq 'integer' || $data_type eq 'bigint'),
                     "$source_name $column has integer auto_increment col"
                 );
             }
 
             # data_type specific checks
 
-            if ( $data_type =~ /^(integer|text)$/ ) {
+            if ( $data_type =~ /^(integer|bigint|smallint|text)$/ ) {
 
                 # nothing to see
             }
@@ -173,7 +173,7 @@ test 'schema_sanity' => sub {
                 $foreign_columns_info->{$foreign_column}->{size},
                 "size matches across relationship $relname in $source_name"
               );
-              
+
             if (   $columns_info->{$self_column}->{is_foreign_key}
                 && $columns_info->{$self_column}->{is_nullable} )
             {
