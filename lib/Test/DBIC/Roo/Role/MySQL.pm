@@ -61,7 +61,7 @@ sub _build_dbd_version {
     return
         "DBD::mysql $DBD::mysql::VERSION Test::mysqld "
       . "$Test::mysqld::VERSION mysql_clientversion "
-      . $self->ic6s_schema->storage->dbh->{mysql_clientversion};
+      . $self->schema->storage->dbh->{mysql_clientversion};
 }
 
 =head2 connect_info
