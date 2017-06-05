@@ -25,7 +25,12 @@ else {
     setmoduledirs(@old_inc);
 }
 
-with 'Interchange6::Test::Role::Fixtures', 'Interchange6::Test::Role::PostgreSQL', @test_roles;
+
+sub _build_schema_class {
+    return 'Test::DBIx::Class::Example::Schema';
+}
+
+with 'Test::DBIx::Class::Role::Fixtures', 'Test::DBIC::Roo::Role::PostgreSQL', @test_roles;
 
 run_me;
 
