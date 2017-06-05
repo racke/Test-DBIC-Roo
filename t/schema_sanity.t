@@ -133,7 +133,7 @@ test 'schema_sanity' => sub {
 
             my $relationship = $source->relationship_info($relname);
 
-            ( my $foreign_source_name = $relationship->{source} ) =~ s/.*://;
+            ( my $foreign_source_name = $relationship->{source} ) =~ s/^(.*?)::Schema::Result::(.*)$/$2/;
 
          # check columns exist in self and foreign then check data_type and size
 
